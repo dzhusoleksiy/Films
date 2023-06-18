@@ -1,0 +1,95 @@
+==============📣 1. Prepare project
+!!! Закомітити всі зміни в branch (в якому працювали)
+
+
+git checkout master
+git checkout -b 02_films 
+
+
+Реєструємось на themoviedb.org
+
+================= key
+On main page click on profile's icon and choose Edit profile (screen_1.png) 
+  => left menu choose API (screen_2.png)
+  => key API Key (v3 auth) (screen_3.png)
+
+==============  documentation
+Main page => bottom menu choose API (screen_4.png)
+=> API Documentation click link developers.themoviedb.org screen_5.png)
+=> left menu choose DISCOVER (screen_6.png)
+
+https://developers.themoviedb.org/3
+===============================
+
+TEST KEY 
+65e043c24785898be00b4abc12fcdaae
+
+==============📣 2. get movies
+mkdir -p src/components/movies
+touch src/components/movies/{MoviesList.jsx,Movie.jsx}
+
+
+const API_URL = "https://api.themoviedb.org/3/discover/movie?api_key=65e043c24785898be00b4abc12fcdaae&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1";
+
+
+==============📣 3. layout and images
+
+const CONFIG_URL =
+  "https://api.themoviedb.org/3/configuration?api_key=65e043c24785898be00b4abc12fcdaae";
+
+
+----- config 
+https://api.themoviedb.org/3/configuration?api_key=65e043c24785898be00b4abc12fcdaae
+
+
+==============📣 4. pagination
+
+==============📣 5. loader
+
+==============📣 6. add react-router
+
+==============📣 7. movie detail
+
+https://developers.themoviedb.org/3/movies/get-movie-details
+
+https://api.themoviedb.org/3/movie/{movie_id}?api_key=65e043c24785898be00b4abc12fcdaae&language=en-US
+
+
+==============📣 8. .env
+
+
+==============📣 9. Genres 
+
+https://developers.themoviedb.org/3/genres/get-movie-list
+
+======================= 👩‍🎓 ЗАВДАННЯ СЛУХАЧАМ:
+
+Вивести в компоненті GenresList.jsx список фільмів відповідно до жанру, 
+який вибирається в компоненті MovieDetails
+
+Для цього 
+1. створити компонент components/movies/GenresList.jsx
+
+2. в компоненті MoviesPage.jsx додати відповідний Route на створений 
+  компоннет GenresList.jsx для відробки лінків жанрів компонента MovieDetails 
+
+3. в компоненті GenresList.jsx 
+  - отримати id жанра
+  - отримати з серверу список фільмів по цьому id
+  - вивести список фильмів з пагінацією використовуючи компонент Movie.jsx 
+ 
+API взяти з документації 
+https://developers.themoviedb.org/3/discover/movie-discover
+ 
+
+const API_URL = "https://api.themoviedb.org/3/discover/movie?language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false";
+
+api додатково ще має включати 
+
+with_genres=<<id_genre>>
+page=<<N_page>>
+api_key=<<key>>
+
+key отримати від .env  
+==================================================================
+
