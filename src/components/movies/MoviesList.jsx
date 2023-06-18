@@ -34,6 +34,10 @@ const MoviesList = () => {
         setMovies(movies);
       } catch (err) {
         console.log(err);
+      } finally {
+        window.scrollTo({
+          top: 0,
+        });
       }
     };
     getMovies();
@@ -49,15 +53,15 @@ const MoviesList = () => {
 
   return (
     <>
+      <div className="grid grid-cols-4 gap-4">
+        {movies?.results &&
+          movies.results.map((m) => <Movie key={m.id} item={m} config={config} />)}
+      </div>
       <Pagination
         currentPage={currentPage}
         totalPageCount={500}
         onPageChange={handlePageChange}
       />
-      <div className="grid grid-cols-4 gap-4">
-        {movies?.results &&
-          movies.results.map((m) => <Movie key={m.id} item={m} config={config} />)}
-      </div>
     </>
   );
 };
