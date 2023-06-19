@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import Pagination from "../common/Pagination";
 import Movie from "./Movie";
+import { ArrToMap } from "../../utils";
 
 const KEY = process.env.REACT_APP_MOVIE_KEY;
 
@@ -13,7 +14,7 @@ const GENRES_LIST_URL = `https://api.themoviedb.org/3/genre/movie/list?api_key=$
 const GenresList = ({ config }) => {
   const [movies, setMovies] = useState({});
   const [currentPage, setCurrentPage] = useState(1);
-  const [genresNames, setGenresNames] = useState([]);
+  const [gName, setGname] = useState("");
 
   const { id } = useParams();
 
@@ -28,7 +29,6 @@ const GenresList = ({ config }) => {
         const res = await fetch(URL);
         const movies = await res.json();
         setMovies(movies);
-        console.log(movies);
       } catch (err) {
         console.log(err.message);
       }
@@ -44,18 +44,21 @@ const GenresList = ({ config }) => {
     async function fetchGenres() {
       try {
         const res = await fetch(GENRES_LIST_URL);
-        const genres = await res.json();
-        setGenresNames(genres);
+        const { genres } = await res.json();
+        const ob = ArrToMap(genres)
+        setGname(ob[id].name)
       } catch (err) {
         console.log(err.message);
       }
     }
     fetchGenres();
-  }, []);
+  }, [id]);
 
   return (
     <>
-      <h1 className="text-3xl text-center mb-4">Genre</h1>
+      <h1 className="text-3xl text-center mb-4">
+        Genre: {gName && gName}
+      </h1>
       <div className="grid grid-cols-4 gap-4">
         {movies?.results &&
           movies.results.map((m) => (
