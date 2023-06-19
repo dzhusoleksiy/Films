@@ -93,3 +93,4 @@ api_key=<<key>>
 key отримати від .env  
 ==================================================================
 
+https://api.themoviedb.org/3/genre/movie/list?api_key=65e043c24785898be00b4abc12fcdaae&language=en-US

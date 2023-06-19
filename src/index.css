@@ -6,4 +6,7 @@
     .nav-link {
         @apply text-2xl text-white bg-cyan-500 px-4 py-2;
     }
+    .nav-link.active {
+        @apply bg-emerald-400
+    }
 }
