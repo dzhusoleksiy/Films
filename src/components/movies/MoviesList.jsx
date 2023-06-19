@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import Movie from "./Movie";
-import Pagination from "./Pagination";
+import Pagination from "../common/Pagination";
 
 const API_URL =
   "https://api.themoviedb.org/3/discover/movie?api_key=65e043c24785898be00b4abc12fcdaae&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false";
@@ -55,7 +55,9 @@ const MoviesList = () => {
     <>
       <div className="grid grid-cols-4 gap-4">
         {movies?.results &&
-          movies.results.map((m) => <Movie key={m.id} item={m} config={config} />)}
+          movies.results.map((m) => (
+            <Movie key={m.id} item={m} config={config} />
+          ))}
       </div>
       <Pagination
         currentPage={currentPage}
