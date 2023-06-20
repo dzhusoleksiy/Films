@@ -27,7 +27,7 @@ body {
 
 @layer components {
   .nav-link {
-    @apply text-xl shadow-md text-white bg-raisinBlack px-2.5 py-4 rounded-lg mx-[10px] sm:mx-0 sm:px-9 sm:py-5 lg:px-10 lg:py-6;
+    @apply text-xl shadow-md text-white bg-raisinBlack px-2.5 py-4 rounded-lg mx-[10px] sm:mx-0 sm:px-9 sm:py-5 lg:px-10 lg:py-6 lg:hover:opacity-90;
   }
   .nav-link.active {
     @apply bg-jonquil;
@@ -45,6 +45,6 @@ body {
     @apply flex justify-center mt-[10px] sm:mt-[20px] md:mt-[30px] lg:mt-[40px] mb-[16px] sm:mb-[26px] md:mb-[36px] lg:mb-[46px] mx-[10px] sm:mx-[15px] md:mx-[20px] lg:mx-[25px];
   }
   .page-button {
-    @apply mx-0.5 shadow-md text-white w-[40px] h-[40px] rounded-full flex items-center justify-center outline-none;
+    @apply mx-0.5 shadow-md text-white w-[40px] h-[40px] rounded-full flex items-center justify-center outline-none lg:hover:opacity-90;
   }
 }

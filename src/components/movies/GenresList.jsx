@@ -56,8 +56,10 @@ const GenresList = ({ config }) => {
 
   return (
     <>
-      <h1 className="text-3xl text-center mb-4">Genre: {gName && gName}</h1>
-      <div className="grid grid-cols-4 gap-4">
+      <h1 className="text-3xl text-center bg-indianRed rounded-lg text-white p-4 mt-[21px] sm:mt-[31px] md:mt-[41px] lg:mt-[51px] mb-[10px] sm:mb-[15px] md:mb-[20px] lg:mb-[25px] shadow-md mx-[10px] sm:mx-[15px] md:mx-[20px] lg:mx-[25px]">
+        Genre: {gName && gName}
+      </h1>
+      <div className="movie-grid mt-0">
         {movies?.results &&
           movies.results.map((m) => (
             <Movie key={m.id} item={m} config={config} />

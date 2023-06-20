@@ -59,6 +59,7 @@ const Pagination = ({ currentPage, totalPageCount, onPageChange }) => {
             page === currentPage ? "bg-jonquil" : "bg-raisinBlack "
           }`}
           onClick={() => handlePageChange(page)}
+          disabled={page === currentPage}
         >
           {page}
         </button>
