@@ -45,8 +45,8 @@ const GenresList = ({ config }) => {
       try {
         const res = await fetch(GENRES_LIST_URL);
         const { genres } = await res.json();
-        const ob = ArrToMap(genres)
-        setGname(ob[id].name)
+        const ob = ArrToMap(genres);
+        setGname(ob[id].name);
       } catch (err) {
         console.log(err.message);
       }
@@ -56,9 +56,7 @@ const GenresList = ({ config }) => {
 
   return (
     <>
-      <h1 className="text-3xl text-center mb-4">
-        Genre: {gName && gName}
-      </h1>
+      <h1 className="text-3xl text-center mb-4">Genre: {gName && gName}</h1>
       <div className="grid grid-cols-4 gap-4">
         {movies?.results &&
           movies.results.map((m) => (

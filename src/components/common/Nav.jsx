@@ -2,7 +2,7 @@ import { NavLink } from "react-router-dom";
 
 const Nav = () => {
   return (
-    <nav className="flex justify-center pt-3 mb-4 divide-x-2 divide-white">
+    <nav className="flex justify-around mt-[10px] sm:mt-[20px] md:mt-[30px] lg:mt-[40px]">
       <NavLink to="/" className="nav-link">
         Home
       </NavLink>

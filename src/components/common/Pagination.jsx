@@ -35,17 +35,17 @@ const Pagination = ({ currentPage, totalPageCount, onPageChange }) => {
   const paginationRange = calculatePaginationRange();
 
   return (
-    <div className="flex justify-center mt-4">
+    <div className="page-div">
       <>
         <button
-          className="px-3 py-2 mx-1 rounded-md bg-gray-200"
+          className="page-button bg-raisinBlack"
           onClick={() => handlePageChange(1)}
           disabled={currentPage == 1}
         >
           &#171;
         </button>
         <button
-          className="px-3 py-2 mr-7 mx-1 rounded-md bg-gray-200"
+          className="page-button bg-raisinBlack mr-auto"
           onClick={() => handlePageChange(currentPage - 1)}
           disabled={currentPage == 1}
         >
@@ -55,8 +55,8 @@ const Pagination = ({ currentPage, totalPageCount, onPageChange }) => {
       {paginationRange.map((page) => (
         <button
           key={page}
-          className={`px-3 py-2 mx-1 rounded-md ${
-            page === currentPage ? "bg-gray-300" : "bg-gray-200"
+          className={`page-button ${
+            page === currentPage ? "bg-jonquil" : "bg-raisinBlack "
           }`}
           onClick={() => handlePageChange(page)}
         >
@@ -65,14 +65,14 @@ const Pagination = ({ currentPage, totalPageCount, onPageChange }) => {
       ))}
       <>
         <button
-          className="px-3 py-2 mx-1 ml-7 rounded-md bg-gray-200"
+          className="page-button bg-raisinBlack ml-auto"
           onClick={() => handlePageChange(currentPage + 1)}
           disabled={currentPage == 500}
         >
           &#8250;
         </button>
         <button
-          className="px-3 py-2 mx-1 rounded-md bg-gray-200"
+          className="page-button bg-raisinBlack"
           onClick={() => handlePageChange(totalPageCount)}
           disabled={currentPage == 500}
         >

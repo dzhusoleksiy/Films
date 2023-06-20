@@ -1,12 +1,50 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Roboto:wght@400;500;700&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+body {
+  font-family: "Poppins", sans-serif;
+  font-family: "Roboto", sans-serif;
+  background-color: #28587b;
+}
+
+.nav-link {
+  box-shadow: 0 9px #999;
+}
+.nav-link:active {
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+.page-button {
+  box-shadow: 0 6px #999;
+}
+.page-button:active {
+  box-shadow: 0 2px #666;
+  transform: translateY(4px);
+}
+
 @layer components {
-    .nav-link {
-        @apply text-2xl text-white bg-cyan-500 px-4 py-2;
-    }
-    .nav-link.active {
-        @apply bg-emerald-400
-    }
+  .nav-link {
+    @apply text-xl shadow-md text-white bg-raisinBlack px-2.5 py-4 rounded-lg mx-[10px] sm:mx-0 sm:px-9 sm:py-5 lg:px-10 lg:py-6;
+  }
+  .nav-link.active {
+    @apply bg-jonquil;
+  }
+  .genres-grid {
+    @apply flex justify-center flex-col gap-[10px] mb-[10px] mx-[10px] mt-[20px] sm:flex-row sm:flex-wrap sm:mb-0 sm:mt-[30px] sm:gap-[15px] md:mt-[40px] md:gap-[20px] lg:mt-[50px] lg:gap-[25px];
+  }
+  .genre-link {
+    @apply rounded-lg shadow-md bg-indianRed text-white text-center text-lg py-4 px-4 sm:px-5 sm:py-5 lg:px-6 lg:py-6;
+  }
+  .movie-grid {
+    @apply grid grid-cols-1 mx-[10px] mt-[21px] gap-[10px] sm:grid-cols-2 sm:mx-[15px] sm:mt-[31px] sm:gap-[15px] md:gap-[20px] md:mx-[20px] md:grid-cols-3 md:mt-[41px] lg:grid-cols-4 lg:gap-[25px] lg:mx-[25px] lg:mt-[51px];
+  }
+  .page-div {
+    @apply flex justify-center mt-[10px] sm:mt-[20px] md:mt-[30px] lg:mt-[40px] mb-[16px] sm:mb-[26px] md:mb-[36px] lg:mb-[46px] mx-[10px] sm:mx-[15px] md:mx-[20px] lg:mx-[25px];
+  }
+  .page-button {
+    @apply mx-0.5 shadow-md text-white w-[40px] h-[40px] rounded-full flex items-center justify-center outline-none;
+  }
 }

@@ -22,14 +22,13 @@ const HomePage = () => {
 
   return (
     <>
-      <h1 className="text-3xl text-center">Genres</h1>
-      <div className="grid grid-cols-3 gap-4">
+      <div className="genres-grid">
         {genres &&
           genres?.map((g) => (
             <Link
               key={g.id}
               to={`/movies/genres/${g.id}`}
-              className="bg-cyan-600 text-white px-3 py-6 text-center"
+              className="genre-link"
             >
               {g.name}
             </Link>

@@ -3,8 +3,7 @@ import Movie from "./Movie";
 import Pagination from "../common/Pagination";
 
 const KEY = process.env.REACT_APP_MOVIE_KEY;
-const API_URL =
-  `https://api.themoviedb.org/3/discover/movie?language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&api_key=${KEY}`;
+const API_URL = `https://api.themoviedb.org/3/discover/movie?language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&api_key=${KEY}`;
 
 const fetchMovies = async (page) => {
   const res = await fetch(API_URL + `&page=${page}`);
@@ -37,7 +36,7 @@ const MoviesList = ({ config }) => {
 
   return (
     <>
-      <div className="grid grid-cols-4 gap-4">
+      <div className="movie-grid">
         {movies?.results &&
           movies.results.map((m) => (
             <Movie key={m.id} item={m} config={config} />
