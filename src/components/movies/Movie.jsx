@@ -15,7 +15,7 @@ const Movie = ({ item, config }) => {
 
   return (
     <div className="movie-div">
-      <Link to={`/movies/detail/${item.id}`}>
+      <Link to={`/Films/Catalog/Details/${item.id}`}>
         {config?.images?.base_url && (
           <div className="movie-poster object-none">
             {imageLoaded ? (

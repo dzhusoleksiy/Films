@@ -27,7 +27,7 @@ const HomePage = () => {
           genres?.map((g) => (
             <Link
               key={g.id}
-              to={`/movies/genres/${g.id}`}
+              to={`/Films/Genres/${g.id}`}
               className="genre-link"
             >
               {g.name}

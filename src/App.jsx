@@ -9,9 +9,9 @@ function App() {
     <div className="container mx-auto">
       <Nav />
       <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/movies/*" element={<MoviesPage />} />
-        <Route path="/about" element={<About />} />
+        <Route path="/Films/Genres" element={<HomePage />} />
+        <Route path="/Films/*" element={<MoviesPage />} />
+        <Route path="/Films/About-Us" element={<About />} />
       </Routes>
     </div>
   );
