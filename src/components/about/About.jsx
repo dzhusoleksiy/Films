@@ -1,7 +1,7 @@
 const About = () => {
   return (
-    <div className="bg-indianRed rounded-lg text-white p-4 mt-[21px] sm:mt-[31px] md:mt-[41px] lg:mt-[51px] shadow mx-[10px] sm:mx-[15px] md:mx-[20px] lg:mx-[25px] mb-[10px] sm:mb-[20px] md:mb-[30px] lg:mb-[40px]">
-      <h1 className="text-3xl text-center mb-4">About Us</h1>
+    <div className="bg-indianRed rounded-lg text-white p-5 mt-[21px] sm:mt-[31px] md:mt-[41px] lg:mt-[51px] shadow mx-[10px] sm:mx-[15px] md:mx-[20px] lg:mx-[25px] mb-[10px] sm:mb-[15px] md:mb-[20px] lg:mb-[25px]">
+      <h1 className="text-3xl my-3 text-bold text-center">About Us</h1>
       <p className="my-3">
         Welcome to our website, your ultimate destination for all things
         film-related! We are not just another streaming service; we are your

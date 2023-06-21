@@ -4,3 +4,9 @@ export function ArrToMap(arr) {
     return acc;
   }, {});
 }
+
+export async function sleep(delay = 800) {
+  return new Promise((resolve) => {
+    return setTimeout(resolve, delay);
+  });
+}

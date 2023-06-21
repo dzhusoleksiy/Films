@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import Pagination from "../common/Pagination";
 import Movie from "./Movie";
 import { ArrToMap } from "../../utils";
+import { FaSpinner } from "react-icons/fa";
 
 const KEY = process.env.REACT_APP_MOVIE_KEY;
 
@@ -15,11 +16,13 @@ const GenresList = ({ config }) => {
   const [movies, setMovies] = useState({});
   const [currentPage, setCurrentPage] = useState(1);
   const [gName, setGname] = useState("");
+  const [loading, setLoading] = useState(false);
 
   const { id } = useParams();
 
   useEffect(() => {
     async function fetchMovies() {
+      setLoading(true);
       if (!id) {
         return;
       }
@@ -31,6 +34,8 @@ const GenresList = ({ config }) => {
         setMovies(movies);
       } catch (err) {
         console.log(err.message);
+      } finally {
+        setLoading(false);
       }
     }
     fetchMovies();
@@ -56,21 +61,29 @@ const GenresList = ({ config }) => {
 
   return (
     <>
-      <h1 className="text-3xl text-center bg-indianRed rounded-lg text-white p-4 mt-[21px] sm:mt-[31px] md:mt-[41px] lg:mt-[51px] mb-[10px] sm:mb-[15px] md:mb-[20px] lg:mb-[25px] shadow-md mx-[10px] sm:mx-[15px] md:mx-[20px] lg:mx-[25px]">
-        Genre: {gName && gName}
-      </h1>
-      <div className="movie-grid mt-0">
-        {movies?.results &&
-          movies.results.map((m) => (
-            <Movie key={m.id} item={m} config={config} />
-          ))}
-      </div>
-      {movies?.results && (
-        <Pagination
-          currentPage={currentPage}
-          totalPageCount={500}
-          onPageChange={handlePageChange}
-        />
+      {loading ? (
+        <div className="flex justify-center mt-[50px]">
+          <FaSpinner className="text-white animate-spin h-10 w-10" />
+        </div>
+      ) : (
+        <div>
+          <h1 className="text-3xl text-center bg-indianRed rounded-lg text-white p-4 mt-[21px] sm:mt-[31px] md:mt-[41px] lg:mt-[51px] mb-[10px] sm:mb-[15px] md:mb-[20px] lg:mb-[25px] shadow-md mx-[10px] sm:mx-[15px] md:mx-[20px] lg:mx-[25px]">
+            Genre: {gName && gName}
+          </h1>
+          <div className="movie-grid mt-0">
+            {movies?.results &&
+              movies.results.map((m) => (
+                <Movie key={m.id} item={m} config={config} />
+              ))}
+          </div>
+          {movies?.results && (
+            <Pagination
+              currentPage={currentPage}
+              totalPageCount={500}
+              onPageChange={handlePageChange}
+            />
+          )}
+        </div>
       )}
     </>
   );
