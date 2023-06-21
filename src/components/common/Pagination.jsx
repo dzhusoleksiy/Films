@@ -38,14 +38,14 @@ const Pagination = ({ currentPage, totalPageCount, onPageChange }) => {
     <div className="page-div">
       <>
         <button
-          className="page-button bg-raisinBlack"
+          className="page-button"
           onClick={() => handlePageChange(1)}
           disabled={currentPage == 1}
         >
           &#171;
         </button>
         <button
-          className="page-button bg-raisinBlack mr-auto"
+          className="page-button mr-auto"
           onClick={() => handlePageChange(currentPage - 1)}
           disabled={currentPage == 1}
         >
@@ -55,9 +55,7 @@ const Pagination = ({ currentPage, totalPageCount, onPageChange }) => {
       {paginationRange.map((page) => (
         <button
           key={page}
-          className={`page-button ${
-            page === currentPage ? "bg-jonquil" : "bg-raisinBlack "
-          }`}
+          className={`page-button ${page === currentPage && "bg-jonquil"}`}
           onClick={() => handlePageChange(page)}
           disabled={page === currentPage}
         >
@@ -66,14 +64,14 @@ const Pagination = ({ currentPage, totalPageCount, onPageChange }) => {
       ))}
       <>
         <button
-          className="page-button bg-raisinBlack ml-auto"
+          className="page-button ml-auto"
           onClick={() => handlePageChange(currentPage + 1)}
           disabled={currentPage == 500}
         >
           &#8250;
         </button>
         <button
-          className="page-button bg-raisinBlack"
+          className="page-button"
           onClick={() => handlePageChange(totalPageCount)}
           disabled={currentPage == 500}
         >

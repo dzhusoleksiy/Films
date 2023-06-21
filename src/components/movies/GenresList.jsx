@@ -62,12 +62,12 @@ const GenresList = ({ config }) => {
   return (
     <>
       {loading ? (
-        <div className="flex justify-center mt-[50px]">
-          <FaSpinner className="text-white animate-spin h-10 w-10" />
+        <div className="spinner-div">
+          <FaSpinner className="spinner" />
         </div>
       ) : (
         <div>
-          <h1 className="text-3xl text-center bg-indianRed rounded-lg text-white p-4 mt-[21px] sm:mt-[31px] md:mt-[41px] lg:mt-[51px] mb-[10px] sm:mb-[15px] md:mb-[20px] lg:mb-[25px] shadow-md mx-[10px] sm:mx-[15px] md:mx-[20px] lg:mx-[25px]">
+          <h1 className="genre-header">
             Genre: {gName && gName}
           </h1>
           <div className="movie-grid mt-0">
@@ -79,7 +79,7 @@ const GenresList = ({ config }) => {
           {movies?.results && (
             <Pagination
               currentPage={currentPage}
-              totalPageCount={500}
+              totalPageCount={movies.total_pages <= 500 ? movies.total_pages : 500}
               onPageChange={handlePageChange}
             />
           )}

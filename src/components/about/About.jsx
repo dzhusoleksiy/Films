@@ -1,12 +1,12 @@
 const About = () => {
   return (
-    <div className="bg-indianRed rounded-lg text-white p-5 mt-[21px] sm:mt-[31px] md:mt-[41px] lg:mt-[51px] shadow mx-[10px] sm:mx-[15px] md:mx-[20px] lg:mx-[25px] mb-[10px] sm:mb-[15px] md:mb-[20px] lg:mb-[25px]">
-      <h1 className="text-3xl my-3 text-bold text-center">About Us</h1>
+    <div className="about-us-div">
+      <h1 className="about-us-header">About Us</h1>
       <p className="my-3">
         Welcome to our website, your ultimate destination for all things
-        film-related! We are not just another streaming service; we are your
-        go-to information provider, offering a vast collection of movies for you
-        to explore and discover.
+        film-related! We are not another streaming service; we are your go-to
+        information provider, offering a vast collection of movies for you to
+        explore and discover.
       </p>
       <p className="my-3">
         We are passionate about cinema and believe that every film has a story
@@ -25,9 +25,8 @@ const About = () => {
       <p className="my-3">
         In addition to browsing by genre, our website also offers general
         selection of films, allowing you to explore the latest releases and stay
-        up-to-date with the newest trends in the film industry. Discover hidden
-        gems, critically acclaimed masterpieces, or simply enjoy a relaxing
-        movie night with your friends and family.
+        up-to-date with the newest trends in the film industry. There you can
+        easily discover hidden gems or critically acclaimed masterpieces.
       </p>
       <p className="my-3">
         Each film listing on our website provides comprehensive information,

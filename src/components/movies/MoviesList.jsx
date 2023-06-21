@@ -41,8 +41,8 @@ const MoviesList = ({ config }) => {
   return (
     <>
       {loading && (
-        <div className="flex justify-center mt-[50px]">
-          <FaSpinner className="text-white animate-spin h-10 w-10" />
+        <div className="spinner-div">
+          <FaSpinner className="spinner" />
         </div>
       )}
       <div className="movie-grid">
