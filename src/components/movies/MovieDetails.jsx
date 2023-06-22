@@ -91,7 +91,7 @@ const MovieDetails = ({ config }) => {
               {imageLoaded ? (
                 <img
                   className="movie-details-poster"
-                  src={config.images.base_url + "w500" + movie.poster_path}
+                  src={config?.images.base_url + "w500" + movie.poster_path}
                   alt={movie.title + " poster"}
                   onLoad={handleImageLoad}
                   onError={handleImageError}

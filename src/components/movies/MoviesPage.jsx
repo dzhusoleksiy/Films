@@ -28,7 +28,7 @@ const MoviesPage = () => {
     <>
       <Routes>
         <Route path="Catalog/*" element={<MoviesList config={config} />} />
-        <Route path="Catalog/Details/:id" element={<MovieDetails config={config} />} />
+        <Route path="Details/:id" element={<MovieDetails config={config} />} />
         <Route path="Genres/:id" element={<GenresList config={config} />} />
       </Routes>
     </>

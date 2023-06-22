@@ -1,7 +1,7 @@
 {
   "name": "recent-films",
   "version": "0.1.0",
-  "homepage": "https://dzhusoleksiy.github.io/Films/Genres",
+  "homepage": "https://dzhusoleksiy.github.io/Films",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
