@@ -1,4 +1,4 @@
-import { useStatem, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { FaSpinner, FaSadTear } from "react-icons/fa";
 
@@ -14,9 +14,7 @@ async function fetchMovie(id) {
 const MovieDetails = ({ config }) => {
   const [movie, setMovie] = useState({});
   const [loading, setLoading] = useState(false);
-  const [imageLoaded, setImageLoaded] = useState(true);
-
-  //const posterUrl = config.images.base_url + "w500" + movie.poster_path;
+  const [imageLoaded, setImageLoaded] = useState(false);
 
   const { id } = useParams();
 
@@ -26,7 +24,6 @@ const MovieDetails = ({ config }) => {
       try {
         const movie = await fetchMovie(id);
         setMovie(movie);
-        console.log(movie);
       } catch (err) {
         console.log(err.message);
       } finally {
@@ -35,6 +32,19 @@ const MovieDetails = ({ config }) => {
     }
     getMovie();
   }, [id]);
+
+  useEffect(() => {
+    if (movie.poster_path) {
+      const image = new Image();
+      image.onload = () => {
+        setImageLoaded(true);
+      };
+      image.onerror = () => {
+        setImageLoaded(false);
+      };
+      image.src = config?.images?.base_url + "w500" + movie.poster_path;
+    }
+  }, [movie.poster_path, config]);
 
   const formatReleaseDate = (dateString) => {
     let date = new Date(dateString);
